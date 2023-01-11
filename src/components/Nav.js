@@ -7,9 +7,9 @@ function Nav() {
   return (
     <div>
         <Navdiv>
-        <LinkTitle to='/'>HEM</LinkTitle>
-        <LinkTitle to="/products">PRODUKTER</LinkTitle>
-        <LinkTitle to="/hittahit">HITTA HIT</LinkTitle>
+        <LinkTitle to='/'>Hem</LinkTitle>
+        <LinkTitle to="/products">Produkter</LinkTitle>
+        <LinkTitle to="/kontaktaoss">Kontakta oss</LinkTitle>
         </Navdiv>
     </div>
   )
