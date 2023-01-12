@@ -1,9 +1,9 @@
 import React from 'react'
 
-function kontaktaOss() {
+function KontaktaOss() {
   return (
-    <div>Här kommer snart ett kontaktformulär!</div>
+    <h1>Här kommer snart ett kontaktformulär!</h1>
   )
 }
 
-export default kontaktaOss
+export default KontaktaOss

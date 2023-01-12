@@ -28,9 +28,11 @@ function Header() {
     background-color: #EEB5A2;
     width: 100vw;
     height: 25vh;
+      align-items: center;
+
     `
     const Img = styled.img `
-
+  height: 20vh;
     `
 
 export default Header
