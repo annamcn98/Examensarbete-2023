@@ -32,7 +32,7 @@ function Header() {
 
     `
     const Img = styled.img `
-  height: 20vh;
+    height: 150px;
     `
 
 export default Header
