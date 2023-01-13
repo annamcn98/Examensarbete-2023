@@ -10,7 +10,7 @@ import Products from './pages/Products';
 import Footer from './components/Footer';
 import Homepage from './pages/Homepage';
 import NoPageFound from './pages/NoPageFound';
-import KontaktaOss from './pages/KontaktaOss';
+// import KontaktaOss from './pages/KontaktaOss';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <Route path='/' element={<Homepage />} />
           <Route path='/product/:id' element={<Product />} />
           <Route path='/products' element={<Products />} />
-          <Route path='/kontakta-oss' element={<KontaktaOss />} />
+          {/* <Route path='/kontakta-oss' element={<KontaktaOss />} /> */}
           <Route path='*' element={<NoPageFound />} />
         </Routes>
       <Footer />
