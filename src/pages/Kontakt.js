@@ -3,22 +3,25 @@ import styled from 'styled-components'
 
 function Kontakt() {
   return (
-    <body>
+    <form>
         <h3>Kontakta oss</h3>
         <Input placeholder="Förnamn" /> 
         <Input placeholder="Efternamn" />
         <Input placeholder="Mejladress" />
         <Textarea placeholder="Fråga" />
+        <br></br>
         
-       <label>Kategori</label> 
-      <select>
+        <label>Välj kategori</label>
+      <Select>
         <option>Våra produkter</option>
+        <br></br>
         <option>Samarbeta med oss</option>
         <option>Jobba hos oss</option>
 
-      </select>
-        <button>Skicka</button>
-        </body>
+      </Select> 
+      <br></br>
+        <Button>Skicka</Button>
+        </form>
   )
 }
 
@@ -26,25 +29,32 @@ export default Kontakt
 
 const Input = styled.input`
 padding: 10px;
-width: 100%;
+width: 80%;
 padding: 20px;
 margin: 10px;
 
 `
 
 const Textarea = styled.textarea`
-width: 50%;
-margin: auto;
+margin-top:30px;
+width: 70%;
+height:100px;
+
 
 `
+ const Select = styled.select`
+width: 10%;
+height: 30px;
+margin: auto;
 
+` 
+const Button = styled.button`
+width: 50%;
+height: 40px;
+margin-top: 15px;
+margin-bottom: 30px;
 
-
-
-
-
-
-
+`
 
 
 
