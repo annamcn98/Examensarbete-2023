@@ -9,6 +9,7 @@ import Product from './pages/Product';
 import Products from './pages/Products';
 import Footer from './components/Footer';
 import Homepage from './pages/Homepage';
+import Kontakt from './pages/Kontakt';
 import NoPageFound from './pages/NoPageFound';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' element={<Homepage />} />
           <Route path='/product/:id' element={<Product />} />
           <Route path='/products' element={<Products />} />
+          <Route path='/Kontakt' element={<Kontakt />} />
           <Route path='*' element={<NoPageFound />} />
         </Routes>
       <Footer />
