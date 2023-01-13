@@ -24,7 +24,6 @@ background-color: #EEB5A2;
 `
 const LinkTitle = styled(Link) `
 background-color: #FAEDE4;
-padding: 0.5em;
 padding-top: 1em;
 width: 200px;
 margin: 0 0.5em;
