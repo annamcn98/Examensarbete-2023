@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import Productitem from '../components/Productitem';
 import styled from 'styled-components'
 import bukett from '../bukett.jpg'
 import vase from '../vase.jpg'
@@ -7,40 +8,94 @@ import vase from '../vase.jpg'
 // import component1 from '../component1.png'
 // import { Link } from 'react-router-dom'
 
+import woocommerceRestApi from '@woocommerce/woocommerce-rest-api';
 
+const api = new woocommerceRestApi({
+  url: 'https://anna-nilsson.cme-projects.com/',
+  consumerKey: 'ck_7e751480edcce32808fa57574c16630a267d8cce',
+  consumerSecret: 'cs_768af23bdd31b6188b9a13ffabf4af6bfbb6f167',
+  wpAPIPrefix: "examen/wp-json",
+});
+
+export async function fetchWooCommerceProducts() {
+  try {
+      const response = await api.get("products");
+      // console.log(response);
+      return response;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+// fetch(api.url)
+// .then((response) => {
+//   console.log(response);
+//   console.log(response.ok);
+
+//   return response.json();
+  
+// })
+// .then((data) => {
+//   console.log(data);
+// })
 
 
 function Homepage() {
+  const [products, setProducts] = useState([]);
+  
+  const fetchProducts = async () => {
+    try {
+      const response = await fetchWooCommerceProducts().catch((error)=> console.error(error));
+      console.log(response.data);
+      const data = response.data;
+      
+      setProducts(data);
+    } catch (error) {
+      console.log (error);
+    }
+  
+  }
+    useEffect( () => {
+      fetchProducts();
+    },[])
   return (
     <div>
-    <Wrapper>
-      <LeftDiv>
-      <Img src={vase} alt="vase"></Img>
-
-      <Btn1>
-          Shoppa vaser
-          </Btn1>
-        {/* <h1 className='Linkfont'>
-          All you need is love, some flowers and a good vase..
-        </h1> */}
-      </LeftDiv>
-      <RightDiv>
-        <Img src={bukett} alt="dried flowers"></Img>
-        <Btn2>
-          Shoppa blommor
-          </Btn2>
+      <Wrapper>
+        <LeftDiv>
+          <Img src={vase} alt="vase"></Img>
+            <Btn1>
+                Shoppa vaser
+            </Btn1>
+              {/* <h1 className='Linkfont'>
+                All you need is love, some flowers and a good vase..
+              </h1> */}
+        </LeftDiv>
+        <RightDiv>
+          <Img src={bukett} alt="dried flowers"></Img>
+            <Btn2>
+                Shoppa blommor
+            </Btn2>
 
       {/* <Img src={bluevase} alt="dried flowers"></Img> */}
       {/* <Img src={flowers} alt="dried flowers"></Img> */}
 
-      </RightDiv>
-    </Wrapper>
-          {/* <ButtonDiv> */}
-        {/* </ButtonDiv> */}
-        <div>
-
-        </div>
-        </div>
+        </RightDiv>
+      </Wrapper>
+        <NewsDiv>
+          <h1>
+            Nyheter!
+          </h1>
+            <div>
+            {
+              products.map((product) => 
+                  (
+                    <Productitem product={product} key={product.id}/>
+                  )
+              )
+            }
+            </div>
+        </NewsDiv>
+    </div>
   )
 }
 
@@ -53,11 +108,6 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
 `
-// const ButtonDiv = styled.div`
-// display: flex;
-// justify-content: center;
-// margin: 1.5em 0;
-// `
 const Btn1 = styled.button`
   height: 30px;
   margin-right: 0.5em;
@@ -99,14 +149,10 @@ const Img = styled.img `
   max-height: 25vh;
   margin-bottom: 20px;
   padding: 1em;
-
-/* height: 25vh;
-
-position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: 2; */
 `
-// const ImgComponent = styled.img `
-// height: 350px;
-// `
+const NewsDiv = styled.div`
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  flex-direction: column;
+`
