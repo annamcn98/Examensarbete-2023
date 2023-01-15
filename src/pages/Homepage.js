@@ -3,6 +3,8 @@ import Productitem from '../components/Productitem';
 import styled from 'styled-components'
 import bukett from '../bukett.jpg'
 import vase from '../vase.jpg'
+import { Link } from 'react-router-dom'
+
 // import bluevase from '../bluevase.png'
 // import flowers from '../flowers.jpg'
 // import component1 from '../component1.png'
@@ -62,20 +64,23 @@ function Homepage() {
     <div>
       <Wrapper>
         <LeftDiv>
-          <Img src={vase} alt="vase"></Img>
-            <Btn1>
+          <Link to="/products/vases">
+            <Img src={vase} alt="vase"></Img>
+              <Btn1>
                 Shoppa vaser
-            </Btn1>
+              </Btn1>
+          </Link>
               {/* <h1 className='Linkfont'>
                 All you need is love, some flowers and a good vase..
               </h1> */}
         </LeftDiv>
         <RightDiv>
-          <Img src={bukett} alt="dried flowers"></Img>
-            <Btn2>
+          <Link to="/products/vases">
+            <Img src={bukett} alt="dried flowers"></Img>
+              <Btn2>
                 Shoppa blommor
-            </Btn2>
-
+              </Btn2>
+          </Link>
       {/* <Img src={bluevase} alt="dried flowers"></Img> */}
       {/* <Img src={flowers} alt="dried flowers"></Img> */}
 
