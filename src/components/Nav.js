@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+// import DropdownItem from './DropdownItem'
 
 
 function Nav() {
@@ -8,7 +9,10 @@ function Nav() {
     <div>
         <Navdiv>
         <LinkTitle className='Linkfont' to='/'>HEM</LinkTitle>
-        <LinkTitle className='Linkfont' to="/products">PRODUKTER</LinkTitle>
+        <LinkTitle className='Linkfont' to="/products">
+          PRODUKTER
+          {/* <DropdownItem /> */}
+          </LinkTitle>
         <LinkTitle className='Linkfont' to="/kontakta-oss">KONTAKTA OSS</LinkTitle>
         </Navdiv>
     </div>

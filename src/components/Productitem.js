@@ -11,7 +11,7 @@ function ProductItem({product}) {
             <h1>{product.name}</h1>
           </Link>
               <Link to={`/product/${product.id}`}>
-              <img src={product.url} alt="product-img"></img>
+              <img src={product.image} alt="product-img"></img>
               </Link>
             <h3>{product.price} SEK</h3>
       </article>

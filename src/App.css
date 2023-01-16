@@ -8,9 +8,19 @@ body {
 .Linkfont {
   font-family: 'Josefin Sans', sans-serif;
 }
+.Linkfont:hover {
+  filter: brightness(1.2);
+}
 
 h1{
   color: #343434;
+}
+
+li {
+  list-style-type: none;
+}
+.dropdowm-menu li:hover {
+  cursor: pointer;
 }
 
 .App {
