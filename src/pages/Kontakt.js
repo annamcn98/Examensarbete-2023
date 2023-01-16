@@ -3,58 +3,75 @@ import styled from 'styled-components'
 
 function Kontakt() {
   return (
-    <form>
+    <Form>
         <h3>Kontakta oss</h3>
-        <Input placeholder="Förnamn" /> 
-        <Input placeholder="Efternamn" />
-        <Input placeholder="Mejladress" />
-        <Textarea placeholder="Fråga" />
-        <br></br>
-        
-        <label>Välj kategori</label>
-      <Select>
-        <option>Våra produkter</option>
-        <br></br>
-        <option>Samarbeta med oss</option>
-        <option>Jobba hos oss</option>
-
-      </Select> 
-      <br></br>
+        <Divflex>
+        <Input placeholder="Namn" /> 
+        <Input placeholder="Efternamn" /> 
+        </Divflex>
+        <Flex2>
+        <Inputmejl placeholder="Mejladress *" />
+        <Textarea placeholder="Fråga *" />
+        </Flex2>
         <Button>Skicka</Button>
-        </form>
+        </Form>
   )
 }
 
 export default Kontakt
 
 const Input = styled.input`
-padding: 10px;
-width: 80%;
-padding: 20px;
-margin: 10px;
+height: 50px;
+width: 350px;
+border-radius: 7px;
+`
 
+const Inputmejl = styled.input`
+height: 50px;
+width: 742px;
+border-radius: 7px;
+margin-bottom:30px;
+margin-top:30px;
 `
 
 const Textarea = styled.textarea`
-margin-top:30px;
-width: 70%;
-height:100px;
-
-
+height:150px;
+width: 744px;
+border-radius: 7px;
+margin-bottom: 20px;
 `
- const Select = styled.select`
-width: 10%;
-height: 30px;
-margin: auto;
-
-` 
+ 
 const Button = styled.button`
-width: 50%;
-height: 40px;
-margin-top: 15px;
-margin-bottom: 30px;
-
+width: 100%;
+height: 50px;
+border-radius: 7px;
+margin-bottom: 20px;
+background-color: #EEB5A2;
+&:hover {
+ background-color: #FAEDE4;
+}
 `
+
+const Divflex = styled.div`
+display:flex;
+justify-content: space-between;
+width:100%;
+`
+
+const Flex2 = styled.div`
+display:flex;
+justify-content: center;
+flex-direction:column;
+`
+
+const Form = styled.form`
+display:flex;
+justify-content: center;
+width: 750px;
+flex-direction:column;
+margin:auto;
+`
+
 
 
 
