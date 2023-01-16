@@ -9,6 +9,7 @@ import Product from './pages/Product';
 import Products from './pages/Products';
 import Footer from './components/Footer';
 import Homepage from './pages/Homepage';
+import Kontakt from './pages/Kontakt';
 import NoPageFound from './pages/NoPageFound';
 import Vases from './pages/Vases';
 import Flowers from './pages/Flowers';
@@ -27,6 +28,7 @@ function App() {
           <Route path='/products/vases' element={<Vases />} />
           <Route path='/products/flowers' element={<Flowers />} />
           {/* <Route path='/kontakta-oss' element={<KontaktaOss />} /> */}
+          <Route path='/Kontakt' element={<Kontakt />} />
           <Route path='*' element={<NoPageFound />} />
         </Routes>
       <Footer />
