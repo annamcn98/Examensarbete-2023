@@ -27,12 +27,12 @@ function Header() {
     justify-content: center;
     background-color: #EEB5A2;
     width: 100vw;
-    height: 25vh;
+    height: 15vh;
       align-items: center;
 
     `
     const Img = styled.img `
-  height: 20vh;
+    height: 130px;
     `
 
 export default Header

@@ -30,12 +30,12 @@ function Product() {
     <div>
       <div>
             <div>
-              <img src={product.url}></img>
+              <img src={product.images && product.images[0].src} alt=""></img>
             </div>
             <article>
               <h2>{product.name}</h2>
               <p>p: {product.description}</p>
-              <h3>Storage: {product.storage} left in stock</h3>
+              <h3>Storage: {product.stock} left in stock</h3>
               <h2>{product.price} SEK</h2>
             </article>
       </div>

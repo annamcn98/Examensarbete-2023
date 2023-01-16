@@ -1,7 +1,26 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Josefin+Sans&family=Nunito&family=Permanent+Marker&family=Raleway:ital,wght@0,400;1,300&display=swap');
+
+body {
+  background-color: #FAEDE4;
+}
+
 .Linkfont {
   font-family: 'Josefin Sans', sans-serif;
+}
+.Linkfont:hover {
+  filter: brightness(1.2);
+}
+
+h1{
+  color: #343434;
+}
+
+li {
+  list-style-type: none;
+}
+.dropdowm-menu li:hover {
+  cursor: pointer;
 }
 
 .App {
