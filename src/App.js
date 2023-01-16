@@ -13,8 +13,6 @@ import Kontakt from './pages/Kontakt';
 import NoPageFound from './pages/NoPageFound';
 import Vases from './pages/Vases';
 import Flowers from './pages/Flowers';
-// import KontaktaOss from './pages/KontaktaOss';
-
 
 function App() {
   return (
@@ -27,7 +25,6 @@ function App() {
           <Route path='/products' element={<Products />} />
           <Route path='/products/vases' element={<Vases />} />
           <Route path='/products/flowers' element={<Flowers />} />
-          {/* <Route path='/kontakta-oss' element={<KontaktaOss />} /> */}
           <Route path='/Kontakt' element={<Kontakt />} />
           <Route path='*' element={<NoPageFound />} />
         </Routes>

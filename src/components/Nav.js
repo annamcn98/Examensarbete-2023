@@ -13,7 +13,7 @@ function Nav() {
           PRODUKTER
           {/* <DropdownItem /> */}
           </LinkTitle>
-        <LinkTitle className='Linkfont' to="/kontakta-oss">KONTAKTA OSS</LinkTitle>
+        <LinkTitle className='Linkfont' to="/kontakt">KONTAKTA OSS</LinkTitle>
         </Navdiv>
     </div>
   )
