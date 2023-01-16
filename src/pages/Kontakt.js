@@ -24,12 +24,14 @@ const Input = styled.input`
 height: 50px;
 width: 350px;
 border-radius: 7px;
+border: gray;
 `
 
 const Inputmejl = styled.input`
 height: 50px;
 width: 742px;
 border-radius: 7px;
+border: gray;
 margin-bottom:30px;
 margin-top:30px;
 `
@@ -38,6 +40,7 @@ const Textarea = styled.textarea`
 height:150px;
 width: 744px;
 border-radius: 7px;
+border: gray;
 margin-bottom: 20px;
 `
  
@@ -45,6 +48,7 @@ const Button = styled.button`
 width: 100%;
 height: 50px;
 border-radius: 7px;
+border: gray;
 margin-bottom: 20px;
 background-color: #EEB5A2;
 &:hover {
