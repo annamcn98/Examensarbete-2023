@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Productitem from '../components/Productitem';
-// import styled from 'styled-components'
+ import styled from 'styled-components'
+ import '../App.css';
 // import { motion } from "framer-motion"
 import woocommerceRestApi from '@woocommerce/woocommerce-rest-api';
 
@@ -46,7 +47,8 @@ function Products() {
 
 
   return (
-    <div>
+    <ParentDiv>
+    <ProduktDiv>
       {/* <h2>
         Welcome!
       </h2>
@@ -57,21 +59,51 @@ function Products() {
               transition={{ duration: 4, delay: 1}} >
               &#128071;&#127997;
               </motion.Emoji>
-        </h1> */}
-    <div>
-      
+        </h1> */}      
         {
           products.map((product) => 
                (
                 <Productitem product={product} key={product.id}/>
+                
               )
           )
         }
 
-    </div>
-    </div>
+    </ProduktDiv>
+    </ParentDiv>
+
   )
+
 }
 
 
+
 export default Products;
+
+const ParentDiv = styled.div`
+/* height: 100%;
+width: 100%;
+display: flex;
+justify-content:center;
+border:1px solid red; */
+
+`
+
+const ProduktDiv = styled.div`
+/* height: 100vh;
+display: flex;
+flex-wrap: wrap;
+border:1px solid black; */
+
+/* width: 20%;
+padding: 2em 1.5em;
+background-color: #f0f4f1;
+align-items: center;
+border:1px solid black;
+*/
+
+border: 1px solid red;
+display:flex;
+flex-wrap:wrap;
+justify-content: center;
+`

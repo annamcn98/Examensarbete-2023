@@ -1,11 +1,12 @@
 import React from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 
 function ProductItem({product}) {
     return (
   
-      
+      <ProduktItemDiv>
       <article>
           <Link to={`/product/${product.id}`}>
             <h1>{product.name}</h1>
@@ -17,8 +18,16 @@ function ProductItem({product}) {
               </Link>
             <h3>{product.price} SEK</h3>
       </article>
+      </ProduktItemDiv>
     
         )
   }
   
   export default ProductItem
+
+  const ProduktItemDiv = styled.div`
+/* justify-items: center;
+text-align: center;*/
+border:1px solid black; 
+width: 20%;
+  `
