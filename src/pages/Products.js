@@ -101,9 +101,16 @@ background-color: #f0f4f1;
 align-items: center;
 border:1px solid black;
 */
-
-border: 1px solid red;
+display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 300px));
+    justify-content: center;
+    background-color: white;
+    /* grid-gap: 1rem; */
+    /* height: 100%; */
+    gap: 1em 1em;
+    padding: 3em 0em;
+/* border: 1px solid red;
 display:flex;
 flex-wrap:wrap;
-justify-content: center;
+justify-content: center; */
 `

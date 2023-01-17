@@ -7,13 +7,16 @@ body {
 
 .Linkfont {
   font-family: 'Josefin Sans', sans-serif;
+  text-decoration: none;
 }
 .Linkfont:hover {
   filter: brightness(1.2);
 }
 
-h1{
+h3{
   color: #343434;
+  padding-top: 0.5em;
+  margin: 0;
 }
 
 li {

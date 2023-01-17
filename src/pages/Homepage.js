@@ -86,19 +86,27 @@ function Homepage() {
 
         </RightDiv>
       </Wrapper>
-        <NewsDiv>
+      <div>
           <h1>
             Nyheter!
           </h1>
-            <div>
+
+      </div>
+        <NewsDiv>
             {
               products.map((product) => 
                   (
-                    <Productitem product={product} key={product.id}/>
+                    <Productitem product={product}
+                      
+                      // .categories[0] ? 
+                      // product.categories[0].name=="Nyheter" ? 
+                      // product.categories[0].name : null}
+                      
+                      key={product.id} 
+                    />
                   )
               )
             }
-            </div>
         </NewsDiv>
     </div>
   )
@@ -111,18 +119,18 @@ const Wrapper = styled.div`
     max-height: 480px;
     margin: 50px 0;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 `
 const Btn1 = styled.button`
   height: 30px;
-  margin-right: 0.5em;
+  /* margin-right: 0.5em; */
   background-color: #EEB5A2;
   border: none;
   margin-bottom: 1em;
 `
 const Btn2 = styled.button`
 height: 30px;
-margin-left: 0.5em;
+/* margin-left: 0.5em; */
 background-color: #EEB5A2;
 border: none;
 margin-bottom: 1em;
@@ -143,7 +151,7 @@ const RightDiv = styled.div`
     flex-direction: column;
     max-height: 500px;
     max-width: 300px;
-    margin-right: 1em;
+    margin-left: 1em;
     background-color: white;
     justify-content: center;
     align-items: center;
@@ -156,8 +164,12 @@ const Img = styled.img `
   padding: 1em;
 `
 const NewsDiv = styled.div`
-  display: flex;
-  background-color: white;
-  justify-content: center;
-  flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 300px));
+    justify-content: center;
+    background-color: white;
+    /* grid-gap: 1rem; */
+    /* height: 100%; */
+    gap: 1em 1em;
+    padding: 3em 0em;
 `
