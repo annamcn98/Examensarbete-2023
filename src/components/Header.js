@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Nav from './Nav'
 import logo from './logo.png'
+import flowers from '../flowers.jpg'
+
 
 
 
@@ -29,6 +31,8 @@ function Header() {
     width: 100vw;
     height: 15vh;
       align-items: center;
+      background-image: url(${flowers});
+background-position: center;
 
     `
     const Img = styled.img `

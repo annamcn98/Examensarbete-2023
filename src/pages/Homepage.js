@@ -6,7 +6,7 @@ import vase from '../vase.jpg'
 import { Link } from 'react-router-dom'
 
 // import bluevase from '../bluevase.png'
-// import flowers from '../flowers.jpg'
+import flowers from '../flowers.jpg'
 // import component1 from '../component1.png'
 // import { Link } from 'react-router-dom'
 
@@ -50,6 +50,27 @@ function Homepage() {
     },[])
   return (
     <div>
+            <div>
+          <H1>
+            Nyheter!
+          </H1>
+
+      </div>
+        <NewsDiv>
+            {
+              products.map((product) => 
+                  (
+                    product.categories[0] ? 
+                      product.categories[0].name==="Nyheter" ?
+
+                      <Productitem product={product}
+                        key={product.id} 
+                      />
+                    :null:null
+                  )
+              )
+            }
+        </NewsDiv>
       <Wrapper>
         <LeftDiv>
           <Link to="/products/vases">
@@ -74,27 +95,6 @@ function Homepage() {
 
         </RightDiv>
       </Wrapper>
-      <div>
-          <H1>
-            Nyheter!
-          </H1>
-
-      </div>
-        <NewsDiv>
-            {
-              products.map((product) => 
-                  (
-                    product.categories[0] ? 
-                      product.categories[0].name==="Nyheter" ?
-
-                      <Productitem product={product}
-                        key={product.id} 
-                      />
-                    :null:null
-                  )
-              )
-            }
-        </NewsDiv>
     </div>
   )
 }
@@ -102,6 +102,7 @@ function Homepage() {
 export default Homepage
 
 const Wrapper = styled.div`
+
     display: flex;
     max-height: 480px;
     padding: 5em 0;
@@ -155,6 +156,7 @@ const NewsDiv = styled.div`
     grid-template-columns: repeat(4, minmax(100px, 300px));
     justify-content: center;
     background-color: white;
+
     /* grid-gap: 1rem; */
     /* height: 100%; */
     gap: 1em 1em;
