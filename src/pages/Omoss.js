@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import evelinabild from '../evelina.jpg.jpg'
-/* import bluevase from '../bluevase.png'
-import pinkcomp from '../pinkcompnent.png' */
+import annabild from '../anna.jpeg'
 function Omoss() {
   return (
     <Body>
@@ -13,7 +12,7 @@ function Omoss() {
     <Container>
       <Content1>
       <h3>Anna Nilsson</h3>
-    <Bestavi src={evelinabild} alt=""></Bestavi> 
+    <Bestavi src={annabild} alt=""></Bestavi> 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
     </Content1>
         <Content1>
@@ -65,7 +64,7 @@ padding-top:50px;
 width:70%;
 `
 const Bestavi = styled.img`
-max-width:70%;
+max-height:25%;
 `
 /* const Vases = styled.div`
 display:flex;
