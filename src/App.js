@@ -13,6 +13,7 @@ import Kontakt from './pages/Kontakt';
 import NoPageFound from './pages/NoPageFound';
 import Vases from './pages/Vases';
 import Flowers from './pages/Flowers';
+import Omoss from './pages/Omoss';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/products/vases' element={<Vases />} />
           <Route path='/products/flowers' element={<Flowers />} />
           <Route path='/Kontakt' element={<Kontakt />} />
+          <Route path='/Omoss' element={<Omoss />} />
           <Route path='*' element={<NoPageFound />} />
         </Routes>
       <Footer />

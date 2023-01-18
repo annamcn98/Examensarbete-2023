@@ -1,99 +1,150 @@
+
 import React from 'react'
+import { useState, useEffect} from 'react';
 import styled from 'styled-components'
 
 function Kontakt() {
-  return (
-    <form>
-        <h3>Kontakta oss</h3>
-        <Input placeholder="Förnamn" /> 
-        <Input placeholder="Efternamn" />
-        <Input placeholder="Mejladress" />
-        <Textarea placeholder="Fråga" />
-        <br></br>
-        
-        <label>Välj kategori</label>
-      <Select>
-        <option>Våra produkter</option>
-        <br></br>
-        <option>Samarbeta med oss</option>
-        <option>Jobba hos oss</option>
+  const initialValues = { mejladress: "", fråga:""};
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
-      </Select> 
-      <br></br>
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormValues({...formValues, [name]: value});
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
+    if (formValues.mejladress && formValues.fråga) {
+        setFormSuccess(true);
+    } else {
+        setFormSuccess(false);
+        
+    }
+};
+
+const [formSuccess, setFormSuccess] = useState(false);
+
+useEffect(() => {
+  if (formSuccess) {
+      setTimeout(() => {
+          window.location.reload();
+      }, 1500);
+  }
+}, [formSuccess]);
+
+
+    const validate = (values) => {
+    const errors = {}
+    const regex = "";
+    if (!values.mejladress){
+      errors.mejladress = "Mejladress saknas";
+    }
+    if (!values.fråga){
+      errors.fråga ="Frågefältet är tomt";
+    }
+
+    return errors;
+
+    
+
+  }
+
+  return (
+    <div>
+    <Form onSubmit={handleSubmit}>
+        <h3>Kontakta oss</h3>
+        <Errors>
+        {formSuccess && <p>Ditt meddelande har skickats!</p>}
+        <p>{formErrors.mejladress}</p>
+        <p>{formErrors.fråga}</p>
+        </Errors>
+        <Divflex>
+        <Input placeholder="Namn" /> 
+        <Input placeholder="Efternamn" /> 
+        </Divflex>
+        <Flex2>
+        <Inputmejl type="text" name="mejladress" placeholder="Mejladress *"  value={formValues.mejladress}  onChange={handleChange} />
+        <Textarea type="text" name="fråga" placeholder="Fråga *"  value={formValues.fråga} onChange={handleChange} />
+        </Flex2>
         <Button>Skicka</Button>
-        </form>
+        </Form>
+
+        </div>
   )
 }
 
+
+
 export default Kontakt
 
-const Input = styled.input`
-padding: 10px;
-width: 80%;
-padding: 20px;
-margin: 10px;
 
+const Input = styled.input`
+height: 50px;
+width: 350px;
+border-radius: 7px;
+border: gray;
+`
+
+const Inputmejl = styled.input`
+height: 50px;
+width: 742px;
+border-radius: 7px;
+border: gray;
+margin-bottom:30px;
+margin-top:30px;
 `
 
 const Textarea = styled.textarea`
-margin-top:30px;
-width: 70%;
-height:100px;
-
-
+height:150px;
+width: 744px;
+border-radius: 7px;
+border: gray;
+margin-bottom: 20px;
 `
- const Select = styled.select`
-width: 10%;
-height: 30px;
-margin: auto;
-
-` 
+ 
 const Button = styled.button`
-width: 50%;
-height: 40px;
-margin-top: 15px;
-margin-bottom: 30px;
-
+width: 100%;
+height: 50px;
+border-radius: 7px;
+border: gray;
+margin-bottom: 20px;
+background-color: #EEB5A2;
+&:hover {
+ background-color: #FAEDE4;
+}
 `
 
+const Divflex = styled.div`
+display:flex;
+justify-content: space-between;
+width:100%;
+`
 
+const Flex2 = styled.div`
+display:flex;
+justify-content: center;
+flex-direction:column;
+`
 
+const Form = styled.form`
+display:flex;
+justify-content: center;
+width: 750px;
+flex-direction:column;
+margin:auto;
+`
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* <div class="container">
-    <form action="action_page.php">
-  
-      <label for="fn">Namn</label>
-      <input type="text" id="fn" name="namn" placeholder="Fullständigt namn">
-  
-      <label for="en">Mejladress</label>
-      <input type="text" id="ln" name="Mejl" placeholder="Mejladress">
-  
-      <label for="land">Land</label>
-      <select id="land" name="Land">
-        <option value="Sverige">Sverige</option>
-        <option value="Norge">Norge</option>
-        <option value="Danmark">Danmark</option>
-        <option value="Finland">Finland</option>
-
-      </select>
-  
-      <label for="förfrågan">Förfrågan</label>
-      <textarea id="förfrågan" name="förfrågan" placeholder="Skriv här..." style="height:200px"></textarea>
-  
-      <input type="skicka" value="Skicka iväg förfrågan">   
-      </form>
-  
-   
-  </div>*/
+const Errors = styled.p`
+/* background-color: #FFEBEB;
+border: 1px solid #F5A6A6; */
+border-radius: 10px;
+padding: 15px; 
+/* box-shadow: 2px 2px 10px #E0AFAF;  */
+font-size: 14px; 
+margin-top: 10px;
+text-decoration:underline;
+`
