@@ -49,8 +49,6 @@ useEffect(() => {
 
     return errors;
 
-    
-
   }
 
   return (
@@ -139,11 +137,9 @@ margin:auto;
 `
 
 const Errors = styled.p`
-/* background-color: #FFEBEB;
-border: 1px solid #F5A6A6; */
 border-radius: 10px;
+color:#FD461C;
 padding: 15px; 
-/* box-shadow: 2px 2px 10px #E0AFAF;  */
 font-size: 14px; 
 margin-top: 10px;
 text-decoration:underline;
