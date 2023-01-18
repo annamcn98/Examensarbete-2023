@@ -29,18 +29,6 @@ export async function fetchWooCommerceProducts() {
     }
   }
 
-// fetch(api.url)
-// .then((response) => {
-//   console.log(response);
-//   console.log(response.ok);
-
-//   return response.json();
-  
-// })
-// .then((data) => {
-//   console.log(data);
-// })
-
 
 function Homepage() {
   const [products, setProducts] = useState([]);
@@ -75,7 +63,7 @@ function Homepage() {
               </h1> */}
         </LeftDiv>
         <RightDiv>
-          <Link to="/products/vases">
+          <Link to="/products/flowers">
             <Img src={bukett} alt="dried flowers"></Img>
               <Btn2>
                 Shoppa blommor
