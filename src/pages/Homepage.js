@@ -6,9 +6,7 @@ import vase from '../vase.jpg'
 import { Link } from 'react-router-dom'
 
 // import bluevase from '../bluevase.png'
-import flowers from '../flowers.jpg'
 // import component1 from '../component1.png'
-// import { Link } from 'react-router-dom'
 
 import woocommerceRestApi from '@woocommerce/woocommerce-rest-api';
 
