@@ -139,7 +139,6 @@ margin:auto;
 `
 
 const Errors = styled.p`
-
 /* background-color: #FFEBEB;
 border: 1px solid #F5A6A6; */
 border-radius: 10px;
@@ -148,5 +147,4 @@ padding: 15px;
 font-size: 14px; 
 margin-top: 10px;
 text-decoration:underline;
-
 `
