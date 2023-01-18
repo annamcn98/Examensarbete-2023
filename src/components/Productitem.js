@@ -51,5 +51,6 @@ const ProductArticle = styled.article`
 `
 const ProductImg = styled.img`
 /* position: absolute; */
-max-height: 30vh;
+max-height: 25vh;
+max-width: 10vw;
 `
