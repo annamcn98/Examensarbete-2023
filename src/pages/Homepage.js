@@ -87,23 +87,22 @@ function Homepage() {
         </RightDiv>
       </Wrapper>
       <div>
-          <h1>
+          <H1>
             Nyheter!
-          </h1>
+          </H1>
 
       </div>
         <NewsDiv>
             {
               products.map((product) => 
                   (
-                    <Productitem product={product}
-                      
-                      // .categories[0] ? 
-                      // product.categories[0].name=="Nyheter" ? 
-                      // product.categories[0].name : null}
-                      
-                      key={product.id} 
-                    />
+                    product.categories[0] ? 
+                      product.categories[0].name==="Nyheter" ?
+
+                      <Productitem product={product}
+                        key={product.id} 
+                      />
+                    :null:null
                   )
               )
             }
@@ -117,44 +116,44 @@ export default Homepage
 const Wrapper = styled.div`
     display: flex;
     max-height: 480px;
-    margin: 50px 0;
+    padding: 5em 0;
     justify-content: center;
     /* align-items: center; */
+    background-color: #FAEDE4;
+
 `
 const Btn1 = styled.button`
   height: 30px;
-  /* margin-right: 0.5em; */
   background-color: #EEB5A2;
   border: none;
   margin-bottom: 1em;
 `
 const Btn2 = styled.button`
-height: 30px;
-/* margin-left: 0.5em; */
-background-color: #EEB5A2;
-border: none;
-margin-bottom: 1em;
+  height: 30px;
+  background-color: #EEB5A2;
+  border: none;
+  margin-bottom: 1em;
 
 `
 const LeftDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    max-height: 500px;
-    max-width: 300px;
-    margin-right: 1em;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  max-width: 300px;
+  margin-right: 1em;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
 `
 const RightDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    max-height: 500px;
-    max-width: 300px;
-    margin-left: 1em;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  max-width: 300px;
+  margin-left: 1em;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
 `
 
 const Img = styled.img `
@@ -172,4 +171,7 @@ const NewsDiv = styled.div`
     /* height: 100%; */
     gap: 1em 1em;
     padding: 3em 0em;
+`
+const H1 = styled.h1 `
+padding-top: 2em;
 `
