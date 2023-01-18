@@ -52,7 +52,7 @@ width:40%;
 align-items:center;
 `
 const Rubrik = styled.h2`
-color:#019A56;
+color:#343434;
 margin-top:60px;
 margin-bottom:40px;
 `
