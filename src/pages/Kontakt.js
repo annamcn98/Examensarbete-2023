@@ -49,8 +49,6 @@ useEffect(() => {
 
     return errors;
 
-    
-
   }
 
   return (
@@ -147,6 +145,4 @@ font-size: 14px;
 margin-top: 10px;
 text-decoration:underline;
 font-weight:bold;
-
-
 `
