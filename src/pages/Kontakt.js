@@ -1,24 +1,86 @@
+
 import React from 'react'
+import { useState, useEffect} from 'react';
 import styled from 'styled-components'
 
 function Kontakt() {
+  const initialValues = { mejladress: "", fråga:""};
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormValues({...formValues, [name]: value});
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
+    if (formValues.mejladress && formValues.fråga) {
+        setFormSuccess(true);
+    } else {
+        setFormSuccess(false);
+        
+    }
+};
+
+const [formSuccess, setFormSuccess] = useState(false);
+
+useEffect(() => {
+  if (formSuccess) {
+      setTimeout(() => {
+          window.location.reload();
+      }, 1500);
+  }
+}, [formSuccess]);
+
+
+    const validate = (values) => {
+    const errors = {}
+    const regex = "";
+    if (!values.mejladress){
+      errors.mejladress = "Mejladress saknas";
+    }
+    if (!values.fråga){
+      errors.fråga ="Frågefältet är tomt";
+    }
+
+    return errors;
+
+    
+
+  }
+
   return (
-    <Form>
+    <div>
+    <Form onSubmit={handleSubmit}>
         <h3>Kontakta oss</h3>
+        <Errors>
+        {formSuccess && <p>Ditt meddelande har skickats!</p>}
+        <p>{formErrors.mejladress}</p>
+        <p>{formErrors.fråga}</p>
+        </Errors>
         <Divflex>
         <Input placeholder="Namn" /> 
         <Input placeholder="Efternamn" /> 
         </Divflex>
         <Flex2>
-        <Inputmejl placeholder="Mejladress *" />
-        <Textarea placeholder="Fråga *" />
+        <Inputmejl type="text" name="mejladress" placeholder="Mejladress *"  value={formValues.mejladress}  onChange={handleChange} />
+        <Textarea type="text" name="fråga" placeholder="Fråga *"  value={formValues.fråga} onChange={handleChange} />
         </Flex2>
         <Button>Skicka</Button>
         </Form>
+
+        </div>
   )
 }
 
+
+
 export default Kontakt
+
 
 const Input = styled.input`
 height: 50px;
@@ -76,45 +138,15 @@ flex-direction:column;
 margin:auto;
 `
 
+const Errors = styled.p`
 
+/* background-color: #FFEBEB;
+border: 1px solid #F5A6A6; */
+border-radius: 10px;
+padding: 15px; 
+/* box-shadow: 2px 2px 10px #E0AFAF;  */
+font-size: 14px; 
+margin-top: 10px;
+text-decoration:underline;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* <div class="container">
-    <form action="action_page.php">
-  
-      <label for="fn">Namn</label>
-      <input type="text" id="fn" name="namn" placeholder="Fullständigt namn">
-  
-      <label for="en">Mejladress</label>
-      <input type="text" id="ln" name="Mejl" placeholder="Mejladress">
-  
-      <label for="land">Land</label>
-      <select id="land" name="Land">
-        <option value="Sverige">Sverige</option>
-        <option value="Norge">Norge</option>
-        <option value="Danmark">Danmark</option>
-        <option value="Finland">Finland</option>
-
-      </select>
-  
-      <label for="förfrågan">Förfrågan</label>
-      <textarea id="förfrågan" name="förfrågan" placeholder="Skriv här..." style="height:200px"></textarea>
-  
-      <input type="skicka" value="Skicka iväg förfrågan">   
-      </form>
-  
-   
-  </div>*/
+`
