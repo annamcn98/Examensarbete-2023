@@ -59,7 +59,7 @@ function Homepage() {
               products.map((product) => 
                   (
                     product.categories[0] ? 
-                      product.categories[0].name==="Nyheter" ?
+                      product.categories[0].name==="NyVas"|| product.categories[0].name==="NyBlomma" ?
 
                       <Productitem product={product}
                         key={product.id} 
