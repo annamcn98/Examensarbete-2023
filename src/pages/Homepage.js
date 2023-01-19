@@ -69,29 +69,30 @@ function Homepage() {
               )
             }
         </NewsDiv>
+        <H1>
+            Shoppa efter kategori
+          </H1>
       <Wrapper>
+          <LinkBtn to="/products/vases">
         <LeftDiv>
-          <Link to="/products/vases">
-            <Img src={vase} alt="vase"></Img>
               <Btn1>
                 Shoppa vaser
               </Btn1>
-          </Link>
-              {/* <h1 className='Linkfont'>
+              {/* <h1 className=''>
                 All you need is love, some flowers and a good vase..
               </h1> */}
         </LeftDiv>
+              </LinkBtn>
+          <LinkBtn to="/products/flowers">
         <RightDiv>
-          <Link to="/products/flowers">
-            <Img src={bukett} alt="dried flowers"></Img>
               <Btn2>
                 Shoppa blommor
               </Btn2>
-          </Link>
       {/* <Img src={bluevase} alt="dried flowers"></Img> */}
       {/* <Img src={flowers} alt="dried flowers"></Img> */}
 
         </RightDiv>
+          </LinkBtn>
       </Wrapper>
     </div>
   )
@@ -125,22 +126,36 @@ const Btn2 = styled.button`
 const LeftDiv = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: 500px;
-  max-width: 300px;
+  /* max-height: 500px;
+  max-width: 300px; */
+  min-height: 350px;
+  min-width: 250px;
   margin-right: 1em;
   background-color: white;
   justify-content: center;
   align-items: center;
+  background-image: url(${vase});
+  /* background-position: center; */
+  background-size: cover;
+`
+const LinkBtn = styled(Link) `
+  text-decoration: none;
+
 `
 const RightDiv = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: 500px;
-  max-width: 300px;
-  margin-left: 1em;
+  /* max-height: 500px;
+  max-width: 300px; */
+  min-height: 350px;
+  min-width: 250px;
+  margin-right: 1em;
   background-color: white;
   justify-content: center;
   align-items: center;
+  background-image: url(${bukett});
+  /* background-position: center; */
+  background-size: cover;
 `
 
 const Img = styled.img `
@@ -162,4 +177,5 @@ const NewsDiv = styled.div`
 `
 const H1 = styled.h1 `
 padding-top: 2em;
+color: #343434;
 `
