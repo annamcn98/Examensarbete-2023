@@ -23,17 +23,15 @@ function Header() {
   )
 }
 
-    const Logodiv = styled.div `
+const Logodiv = styled.div `
     display: flex;
-    /* align-items: flex-start; */
     justify-content: center;
     background-color: #EEB5A2;
     width: 100vw;
-    height: 15vh;
-      align-items: center;
-      background-image: url(${flowers});
-background-position: center;
-
+    height: 20vh;
+    align-items: center;
+    background-image: url(${flowers});
+    background-position: center;
     `
     const Img = styled.img `
     height: 130px;

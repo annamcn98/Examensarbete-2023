@@ -75,9 +75,9 @@ function Homepage() {
       <Wrapper>
           <LinkBtn to="/products/vases">
         <LeftDiv>
-              <Btn1>
+              <button className='homepagebtn'>
                 Shoppa vaser
-              </Btn1>
+              </button>
               {/* <h1 className=''>
                 All you need is love, some flowers and a good vase..
               </h1> */}
@@ -85,9 +85,9 @@ function Homepage() {
               </LinkBtn>
           <LinkBtn to="/products/flowers">
         <RightDiv>
-              <Btn2>
+              <button className='homepagebtn'>
                 Shoppa blommor
-              </Btn2>
+              </button>
       {/* <Img src={bluevase} alt="dried flowers"></Img> */}
       {/* <Img src={flowers} alt="dried flowers"></Img> */}
 
@@ -108,26 +108,12 @@ const Wrapper = styled.div`
     justify-content: center;
     /* align-items: center; */
     background-color: #FAEDE4;
-
-`
-const Btn1 = styled.button`
-  height: 30px;
-  background-color: #EEB5A2;
-  border: none;
-  margin-bottom: 1em;
-`
-const Btn2 = styled.button`
-  height: 30px;
-  background-color: #EEB5A2;
-  border: none;
-  margin-bottom: 1em;
-
+    /* border-width: thick;
+    border-style: dotted #019A56; */
 `
 const LeftDiv = styled.div`
   display: flex;
   flex-direction: column;
-  /* max-height: 500px;
-  max-width: 300px; */
   min-height: 350px;
   min-width: 250px;
   margin-right: 1em;
@@ -135,7 +121,6 @@ const LeftDiv = styled.div`
   justify-content: center;
   align-items: center;
   background-image: url(${vase});
-  /* background-position: center; */
   background-size: cover;
 `
 const LinkBtn = styled(Link) `
@@ -145,8 +130,7 @@ const LinkBtn = styled(Link) `
 const RightDiv = styled.div`
   display: flex;
   flex-direction: column;
-  /* max-height: 500px;
-  max-width: 300px; */
+
   min-height: 350px;
   min-width: 250px;
   margin-right: 1em;
@@ -154,15 +138,7 @@ const RightDiv = styled.div`
   justify-content: center;
   align-items: center;
   background-image: url(${bukett});
-  /* background-position: center; */
   background-size: cover;
-`
-
-const Img = styled.img `
-  /* min-width: 15vw; */
-  max-height: 25vh;
-  margin-bottom: 20px;
-  padding: 1em;
 `
 const NewsDiv = styled.div`
     display: grid;
@@ -170,12 +146,11 @@ const NewsDiv = styled.div`
     justify-content: center;
     background-color: white;
 
-    /* grid-gap: 1rem; */
-    /* height: 100%; */
     gap: 1em 1em;
     padding: 3em 0em;
+
 `
 const H1 = styled.h1 `
 padding-top: 2em;
-color: #343434;
+color: #FD461C;
 `

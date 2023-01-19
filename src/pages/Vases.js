@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Productitem from '../components/Productitem';
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
 
 import woocommerceRestApi from '@woocommerce/woocommerce-rest-api';
 
@@ -40,15 +42,23 @@ function Vases() {
       fetchProducts();
     },[])
   return (
-    <div>
-
-      <div>
-          <H1>
-            Vaser
-          </H1>
-
-      </div>
+    <div className='parentdiv'>
         <NewsDiv>
+        <div>
+          <h1 className=''>
+            Shoppa vaser
+          </h1>
+          <h3 className='underrubrik'>
+            Hos oss hittar du den <br></br>
+            perfekta vasen till<br></br>
+            hemmets alla rum   
+          </h3> 
+          <Link to="/products">
+          <button className='filterbtn'>
+            Tillbaka till alla produkter
+          </button> 
+          </Link>  
+        </div>
             {
               products.map((product) => 
                   (
@@ -75,11 +85,6 @@ const NewsDiv = styled.div`
     /* height: 100%; */
     gap: 1em 1em;
     padding: 3em 0em;
-`
-const H1 = styled.h1 `
-padding-top: 2em;
-font-family: 'Josefin Sans', sans-serif;
-color: #7AB0DF;
 `
 
 export default Vases

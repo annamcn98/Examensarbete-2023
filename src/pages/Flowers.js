@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Productitem from '../components/Productitem';
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
 
 import woocommerceRestApi from '@woocommerce/woocommerce-rest-api';
 
@@ -40,15 +42,24 @@ function Flowers() {
       fetchProducts();
     },[])
   return (
-    <div>
+    <div className='parentdiv'>
 
-      <div>
-          <H1>
-            Torkade blommor
-          </H1>
-
-      </div>
         <NewsDiv>
+<div>
+          <h1>
+            Shoppa torkade blommor
+          </h1>
+          <h3 className='underrubrik'>
+            Blommor som håller sig <br></br>
+            fina för alltid är torkade! <br></br>
+               
+          </h3> 
+          <Link to="/products">
+          <button className='filterbtn'>
+            Tillbaka till alla produkter
+          </button> 
+          </Link>  
+        </div>
             {
               products.map((product) => 
                   (
@@ -75,11 +86,6 @@ const NewsDiv = styled.div`
     /* height: 100%; */
     gap: 1em 1em;
     padding: 3em 0em;
-`
-const H1 = styled.h1 `
-padding-top: 2em;
-font-family: 'Josefin Sans', sans-serif;
-color: #7AB0DF;
 `
 
 
