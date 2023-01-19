@@ -13,10 +13,8 @@ function Nav() {
         </Empty>
         <Linkdiv>
         <LinkTitle className='Linkfont' to='/'>HEM</LinkTitle>
-        <LinkTitle className='Linkfont' to="/products">
-          PRODUKTER
-          {/* <DropdownItem /> */}
-          </LinkTitle>
+        <LinkTitle className='Linkfont' to="/products">PRODUKTER</LinkTitle>
+        <LinkTitle className='Linkfont' to="/omoss">OM OSS</LinkTitle>
         <LinkTitle className='Linkfont' to="/kontakt">KONTAKT</LinkTitle>
         </Linkdiv>
         <CartDiv>

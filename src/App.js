@@ -26,8 +26,8 @@ function App() {
           <Route path='/products' element={<Products />} />
           <Route path='/products/vases' element={<Vases />} />
           <Route path='/products/flowers' element={<Flowers />} />
-          <Route path='/Kontakt' element={<Kontakt />} />
-          <Route path='/Omoss' element={<Omoss />} />
+          <Route path='/kontakt' element={<Kontakt />} />
+          <Route path='/omoss' element={<Omoss />} />
           <Route path='*' element={<NoPageFound />} />
         </Routes>
       <Footer />
