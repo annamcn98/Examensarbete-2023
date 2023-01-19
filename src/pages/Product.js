@@ -32,33 +32,61 @@ function Product() {
       console.log (error)
     }
   }
+  console.log(product);
 
   useEffect(() => {
     fetchProduct();
   },)
 
   return (
-    <div>
-      <div>
-        <div>
+    <Div>
+      <Divitem>
         <Produktrubrik>{product.name}</Produktrubrik>
+        <Divvit>
+        <Divbild>
           <Img src={product.images && product.images[0].src} alt=""></Img>
-        </div>
+        </Divbild>
+        </Divvit>
         <article>
-          <p> {product.description}</p>
-          <h2>{product.price} KR</h2>
+          <Price>{product.price} KR</Price>
         </article>
-      </div> 
+      </Divitem> 
     
-    </div> 
+    </Div> 
   )
 }
 export default Product;
 
+const Div = styled.div`
+/* background-color:#FAEDE4; */
+`
 const Produktrubrik = styled.h2`
 padding-top:20px;
+font-family: 'Josefin Sans', ssans-serif;
 `
+
+const Price = styled.h3`
+padding-bottom:25px;
+
+`
+const Divbild = styled.div`
+display:flex;
+justify-content:center;
+`
+const Divvit = styled.div`
+background-color:#FAEDE4;
+display:flex;
+width:35vw;
+justify-content: center; 
+padding:1em 0;
+`
+const Divitem = styled.div`
+justify-content:center;
+display:flex;
+margin:50px 0px 50px 0px;
+`
+
 const Img = styled.img`
-width:20%;
+max-height:60vh;
 padding-top:10px;
 `
