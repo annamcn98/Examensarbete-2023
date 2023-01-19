@@ -8,16 +8,22 @@ function ProductItem({product}) {
   
       <ProduktItemCon>
       <ProductArticle>
+        <div>
               <Link to={`/product/${product.id}`}>
 
                   <ProductImg src={product.images[0] ? product.images[0].src :null} alt="product-img"></ProductImg>
 
               </Link>
-          <Link className='Linkfont' to={`/product/${product.id}`}>
-            <h3>{product.name}</h3>
-          </Link>
-            <p>{product.price} kr</p>
-            <BuyBtn>Lägg i varukorg</BuyBtn>
+        </div>
+            <InfoDiv>
+              <Link className='Linkfont' to={`/product/${product.id}`}>
+                <h3>{product.name}</h3>
+              </Link>
+                <p>{product.price} kr</p>
+                  <BuyBtn>Lägg i varukorg</BuyBtn>
+            </InfoDiv>
+
+            
       </ProductArticle>
       </ProduktItemCon>
     
@@ -31,23 +37,18 @@ function ProductItem({product}) {
     flex-direction: column;
     padding: 1.5em 0;
     background-color: #FAEDE4;
-    /* justify-content: center; */
+    justify-content: flex-end;
     align-items: center;
-    /* max-width: 16vw; */
-    /* margin: auto; */
-
-    /* margin: 1em 2em; */
 `
 const ProductArticle = styled.article`
-    justify-items: center;
+  display: flex;
+  flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     background-color: white;
     padding: 1em 0;
     width: 80%;
-    max-height: 50vh;
-    /* max-width: 20vw; */
-    /* position: relative; */
-
+    height: 100%;
 `
 const ProductImg = styled.img`
 /* position: absolute; */
@@ -60,4 +61,7 @@ const BuyBtn = styled.button`
   border-radius: 8px;
   font-family: 'Josefin Sans', sans-serif;
   border: 1px solid #343434;
+`
+const InfoDiv = styled.div`
+
 `
