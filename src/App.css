@@ -8,18 +8,63 @@
 .Linkfont:hover {
   filter: brightness(1.2);
 }
+h1{
+  color: #FD461C;
 
+}
+.homepagebtn{
+  padding: 1em 1em;
+  background-color: #7AB0DF;
+  color: white;
+  border: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: medium;
+}
+.homepagebtn:hover {
+  background-color: white;
+  color: #7AB0DF;
+}
 h3{
   color: #343434;
   padding-top: 0.5em;
   margin: 0;
 }
+.underrubrik{
+  color: #343434;
+margin-bottom: 2em;
+font-family: 'Cormorant Garamond', serif;}
 
 li {
   list-style-type: none;
 }
-.dropdowm-menu li:hover {
-  cursor: pointer;
+.filterbtn {
+  margin: 0.5em 2em;
+  background-color: white;
+color: #7AB0DF;
+  padding: 0.6em;
+  border-radius: 8px;
+  font-family: 'Josefin Sans', sans-serif;
+ border: 1px solid #7AB0DF;
+  
+}
+.filterbtn:hover {
+  background-color: #7AB0DF;
+  color: white;
+  border: 1px solid #7AB0DF;
+}
+.parentdiv {
+  margin: 5em 0;
+}
+.buybtn {
+  background-color: white;
+  padding: 0.6em;
+  border-radius: 8px;
+  font-family: 'Josefin Sans', sans-serif;
+  border: 1px solid #343434;
+}
+.buybtn:hover {
+  background-color: #343434;
+  color: white;
 }
 
 .App {

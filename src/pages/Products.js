@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import Productitem from '../components/Productitem';
  import styled from 'styled-components'
  import '../App.css';
+ import { Link } from 'react-router-dom'
+
 // import { motion } from "framer-motion"
 import woocommerceRestApi from '@woocommerce/woocommerce-rest-api';
 
@@ -30,7 +32,6 @@ function Products() {
   const fetchProducts = async () => {
     try {
       const response = await fetchWooCommerceProducts().catch((error)=> console.error(error));
-      // const response = await fetch('https://codexplained.se/electronics.php');
       console.log(response.data);
       const data = response.data;
       
@@ -47,30 +48,44 @@ function Products() {
 
 
   return (
-    <ParentDiv>
+    <div className='parentdiv'>
     <ProduktDiv>
-      {/* <h2>
-        Welcome!
-      </h2>
-        <h1 className='all-products'>
-          All products
-            <motion.Emoji
-              animate={{y:[0,100,0,100,0,100]}}
-              transition={{ duration: 4, delay: 1}} >
-              &#128071;&#127997;
-              </motion.Emoji>
-        </h1> */}      
+        <div>
+
+          <h1>
+            Alla produkter
+          </h1>
+          <h3 className='underrubrik'>
+            En vas med torkade<br></br>
+            blommor är alla rums<br></br>
+            perfekta centerpiece.<br></br><br></br>
+            Hitta din personliga <br></br>
+            kombo hos oss!   
+          </h3> 
+
+          <Link to="/products/vases">
+          <button className='filterbtn'>
+            Shoppa vaser
+          </button>  
+          </Link>
+          <Link to="/products/flowers">
+
+          <button className='filterbtn'>
+            Shoppa blommor
+          </button>  
+          </Link>
+
+        </div>
         {
           products.map((product) => 
                (
-                <Productitem product={product} key={product.id}/>
-                
+                <Productitem product={product} key={product.id}/> 
               )
           )
         }
 
     </ProduktDiv>
-    </ParentDiv>
+    </div>
 
   )
 
@@ -80,37 +95,13 @@ function Products() {
 
 export default Products;
 
-const ParentDiv = styled.div`
-/* height: 100%;
-width: 100%;
-display: flex;
-justify-content:center;
-border:1px solid red; */
-
-`
 
 const ProduktDiv = styled.div`
-/* height: 100vh;
-display: flex;
-flex-wrap: wrap;
-border:1px solid black; */
-
-/* width: 20%;
-padding: 2em 1.5em;
-background-color: #f0f4f1;
-align-items: center;
-border:1px solid black;
-*/
 display: grid;
     grid-template-columns: repeat(4, minmax(100px, 300px));
     justify-content: center;
     background-color: white;
-    /* grid-gap: 1rem; */
-    /* height: 100%; */
     gap: 1em 1em;
     padding: 3em 0em;
-/* border: 1px solid red;
-display:flex;
-flex-wrap:wrap;
-justify-content: center; */
+
 `

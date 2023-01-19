@@ -20,7 +20,7 @@ function ProductItem({product}) {
                 <h3>{product.name}</h3>
               </Link>
                 <p>{product.price} kr</p>
-                  <BuyBtn>Lägg i varukorg</BuyBtn>
+                  <button className="buybtn">Lägg i varukorg</button>
             </InfoDiv>
 
             
@@ -54,13 +54,6 @@ const ProductImg = styled.img`
 /* position: absolute; */
 max-height: 25vh;
 max-width: 10vw;
-`
-const BuyBtn = styled.button`
-  background-color: white;
-  padding: 0.6em;
-  border-radius: 8px;
-  font-family: 'Josefin Sans', sans-serif;
-  border: 1px solid #343434;
 `
 const InfoDiv = styled.div`
 
