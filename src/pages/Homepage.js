@@ -5,9 +5,6 @@ import bukett from '../bukett.jpg'
 import vase from '../vase.jpg'
 import { Link } from 'react-router-dom'
 
-// import bluevase from '../bluevase.png'
-// import component1 from '../component1.png'
-
 import woocommerceRestApi from '@woocommerce/woocommerce-rest-api';
 
 const api = new woocommerceRestApi({
@@ -19,9 +16,8 @@ const api = new woocommerceRestApi({
 
 export async function fetchWooCommerceProducts() {
   try {
-      const response = await api.get("products");
-      // console.log(response);
-      return response;
+    const response = await api.get("products", { per_page:100 });
+    return response;
     } catch (error) {
       throw new Error(error);
     }
@@ -48,68 +44,75 @@ function Homepage() {
     },[])
   return (
     <div>
-            <div>
-          <H1>
-            Nyheter!
-          </H1>
-
+      <div>
+        <H1>
+          Nyheter!
+        </H1>
       </div>
         <NewsDiv>
             {
               products.map((product) => 
-                  (
-                    product.categories[0] ? 
-                      product.categories[0].name==="NyVas"|| product.categories[0].name==="NyBlomma" ?
-
-                      <Productitem product={product}
-                        key={product.id} 
-                      />
-                    :null:null
-                  )
+                (
+                  product.categories[0] ? 
+                  product.categories[0].name==="NyVas"|| 
+                  product.categories[0].name==="NyBlomma" ?
+                    <Productitem product={product}
+                      key={product.id} 
+                    />
+                  :null:null
+                )
               )
             }
         </NewsDiv>
-        <H1>
+          <H1>
             Shoppa efter kategori
           </H1>
-      <Wrapper>
+        <Wrapper>
           <LinkBtn to="/products/vases">
-        <LeftDiv>
+            <LeftDiv>
               <button className='homepagebtn'>
                 Shoppa vaser
               </button>
               {/* <h1 className=''>
                 All you need is love, some flowers and a good vase..
               </h1> */}
-        </LeftDiv>
-              </LinkBtn>
+            </LeftDiv>
+          </LinkBtn>
           <LinkBtn to="/products/flowers">
-        <RightDiv>
+            <RightDiv>
               <button className='homepagebtn'>
                 Shoppa blommor
               </button>
-      {/* <Img src={bluevase} alt="dried flowers"></Img> */}
-      {/* <Img src={flowers} alt="dried flowers"></Img> */}
-
-        </RightDiv>
+            </RightDiv>
           </LinkBtn>
-      </Wrapper>
+        </Wrapper>
     </div>
   )
 }
 
 export default Homepage
 
+const H1 = styled.h1 `
+  padding-top: 2em;
+  color: #FD461C;
+`
+const NewsDiv = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 300px));
+  justify-content: center;
+  background-color: white;
+  gap: 1em 1em;
+  padding: 3em 0em;
+`
 const Wrapper = styled.div`
-
-    display: flex;
-    max-height: 480px;
-    padding: 5em 0;
-    justify-content: center;
-    /* align-items: center; */
-    background-color: #FAEDE4;
-    /* border-width: thick;
-    border-style: dotted #019A56; */
+  display: flex;
+  max-height: 480px;
+  padding: 5em 0;
+  justify-content: center;
+  background-color: #FAEDE4;
+`
+const LinkBtn = styled(Link) `
+  text-decoration: none;
 `
 const LeftDiv = styled.div`
   display: flex;
@@ -123,14 +126,9 @@ const LeftDiv = styled.div`
   background-image: url(${vase});
   background-size: cover;
 `
-const LinkBtn = styled(Link) `
-  text-decoration: none;
-
-`
 const RightDiv = styled.div`
   display: flex;
   flex-direction: column;
-
   min-height: 350px;
   min-width: 250px;
   margin-right: 1em;
@@ -139,18 +137,4 @@ const RightDiv = styled.div`
   align-items: center;
   background-image: url(${bukett});
   background-size: cover;
-`
-const NewsDiv = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 300px));
-    justify-content: center;
-    background-color: white;
-
-    gap: 1em 1em;
-    padding: 3em 0em;
-
-`
-const H1 = styled.h1 `
-padding-top: 2em;
-color: #FD461C;
 `

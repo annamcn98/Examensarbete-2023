@@ -3,8 +3,6 @@ import Productitem from '../components/Productitem';
  import styled from 'styled-components'
  import '../App.css';
  import { Link } from 'react-router-dom'
-
-// import { motion } from "framer-motion"
 import woocommerceRestApi from '@woocommerce/woocommerce-rest-api';
 
 const api = new woocommerceRestApi({
@@ -17,9 +15,8 @@ const api = new woocommerceRestApi({
 export async function fetchWooCommerceProducts() {
     try {
         const response = await api.get("products", { per_page:100 });
-        // console.log(response);
         return response;
-      } catch (error) {
+        } catch (error) {
         throw new Error(error);
       }
     }
@@ -27,7 +24,6 @@ export async function fetchWooCommerceProducts() {
 function Products() {
 
   const [products, setProducts] = useState([]);
-  // const wooProducts = await fetchWooCommerceProducts().catch((error)=> console.error(error));
   
   const fetchProducts = async () => {
     try {
@@ -49,9 +45,8 @@ function Products() {
 
   return (
     <div className='parentdiv'>
-    <ProduktDiv>
+      <ProduktDiv>
         <div>
-
           <h1>
             Alla produkter
           </h1>
@@ -62,46 +57,40 @@ function Products() {
             Hitta din personliga <br></br>
             kombo hos oss!   
           </h3> 
-
           <Link to="/products/vases">
           <button className='filterbtn'>
             Shoppa vaser
           </button>  
           </Link>
           <Link to="/products/flowers">
-
           <button className='filterbtn'>
             Shoppa blommor
           </button>  
           </Link>
 
         </div>
-        {
-          products.map((product) => 
-               (
+          {
+            products.map((product) => 
+              (
                 <Productitem product={product} key={product.id}/> 
               )
-          )
-        }
+            )
+          }
 
-    </ProduktDiv>
+      </ProduktDiv>
     </div>
 
   )
 
 }
 
-
-
 export default Products;
 
-
 const ProduktDiv = styled.div`
-display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 300px));
-    justify-content: center;
-    background-color: white;
-    gap: 1em 1em;
-    padding: 3em 0em;
-
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 300px));
+  justify-content: center;
+  background-color: white;
+  gap: 1em 1em;
+  padding: 3em 0em;
 `
