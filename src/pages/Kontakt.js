@@ -54,7 +54,7 @@ useEffect(() => {
   return (
     <Parent>
     <Form onSubmit={handleSubmit}>
-        <h3>Kontakta oss</h3>
+        <H3>Kontakta oss</H3>
         <Errors>
         {formSuccess && <p>Ditt meddelande har skickats!</p>}
         <p>{formErrors.mejladress}</p>
@@ -80,6 +80,9 @@ useEffect(() => {
 export default Kontakt
 
 
+const H3 = styled.h3`
+padding-top:30px;
+`
 const Parent = styled.div`
 background-color:#FAEDE4;
 `

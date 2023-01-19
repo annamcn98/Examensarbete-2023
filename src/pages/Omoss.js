@@ -53,7 +53,8 @@ const Bestavi = styled.img`
 max-height:25%;
 `
 const H3 = styled.h3`
-padding-bottom:15px;
+padding-bottom:30px;
+padding-top:20px;
 `
 
 export default Omoss
