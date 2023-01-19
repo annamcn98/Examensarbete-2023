@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Nav from './Nav'
 import logo from './logo.png'
 import flowers from '../flowers.jpg'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -12,9 +14,11 @@ function Header() {
     <div>
 
         <div>
+        <Link to="/">
             <Logodiv>
               <Img src={logo} alt="Logo"></Img>
             </Logodiv>
+            </Link>
             <Nav />
         </div>
         
