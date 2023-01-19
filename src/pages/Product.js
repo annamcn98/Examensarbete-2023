@@ -39,54 +39,49 @@ function Product() {
   },)
 
   return (
-    <Div>
-      <Divitem>
-        <Produktrubrik>{product.name}</Produktrubrik>
-        <Divvit>
-        <Divbild>
+     <Parent>
+
+
+      <div>
+        <Produktnamn>{product.name}</Produktnamn>
+        </div>
+
           <Img src={product.images && product.images[0].src} alt=""></Img>
-        </Divbild>
-        </Divvit>
-        <article>
-          <Price>{product.price} KR</Price>
-        </article>
-      </Divitem> 
     
-    </Div> 
+        <div>
+          <H3>{product.price} KR</H3>
+        </div>
+        <div>
+        <button className="buybtn">
+          Lägg i varukorg
+
+        </button>
+        </div>
+
+      </Parent> 
+    
   )
 }
 export default Product;
 
-const Div = styled.div`
-/* background-color:#FAEDE4; */
-`
-const Produktrubrik = styled.h2`
-padding-top:20px;
-font-family: 'Josefin Sans', ssans-serif;
+const Produktnamn = styled.h2`
+margin:0;
+margin-bottom:15px;
 `
 
-const Price = styled.h3`
-padding-bottom:25px;
-
-`
-const Divbild = styled.div`
-display:flex;
-justify-content:center;
-`
-const Divvit = styled.div`
+const Parent = styled.div`
 background-color:#FAEDE4;
-display:flex;
-width:35vw;
-justify-content: center; 
-padding:1em 0;
-`
-const Divitem = styled.div`
-justify-content:center;
-display:flex;
-margin:50px 0px 50px 0px;
+padding:4em;
 `
 
 const Img = styled.img`
 max-height:60vh;
-padding-top:10px;
+align-items:center;
+margin:15px 0;
 `
+const H3 = styled.h3`
+margin-bottom:15px;
+`
+
+
+

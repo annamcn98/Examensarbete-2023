@@ -52,7 +52,7 @@ useEffect(() => {
   }
 
   return (
-    <div>
+    <Parent>
     <Form onSubmit={handleSubmit}>
         <h3>Kontakta oss</h3>
         <Errors>
@@ -71,7 +71,7 @@ useEffect(() => {
         <Button>Skicka</Button>
         </Form>
 
-        </div>
+        </Parent>
   )
 }
 
@@ -80,6 +80,9 @@ useEffect(() => {
 export default Kontakt
 
 
+const Parent = styled.div`
+background-color:#FAEDE4;
+`
 const Input = styled.input`
 height: 50px;
 width: 350px;
