@@ -21,13 +21,13 @@ const api = new woocommerceRestApi({
 
 function Product() {
   const [product, setProduct] = useState([]);
-  const { id } = useParams(); // get the id from the URL
+  const { id } = useParams();
 
   const fetchProduct = async () => {
     try {
       const response = await fetchWooCommerceProducts().catch((error)=>(error));
       const data = response.data;
-      setProduct(data.filter(p => p.id == id)[0]); // filter the list of products to find the one with the matching id
+      setProduct(data.filter(p => p.id == id)[0]);
     } catch (error) {
       console.log (error)
     }
