@@ -1,6 +1,7 @@
 import { useParams} from "react-router-dom"
 import { useEffect, useState } from "react";
 import woocommerceRestApi from '@woocommerce/woocommerce-rest-api';
+import styled from "styled-components";
 
 const api = new woocommerceRestApi({
     url: 'https://anna-nilsson.cme-projects.com/',
@@ -12,7 +13,6 @@ const api = new woocommerceRestApi({
   export async function fetchWooCommerceProducts() {
       try {
           const response = await api.get("products");
-          // console.log(response);
           return response;
         } catch (error) {
           throw new Error(error);
@@ -41,10 +41,10 @@ function Product() {
     <div>
       <div>
         <div>
-          <img src={product.images && product.images[0].src} alt=""></img>
+        <Produktrubrik>{product.name}</Produktrubrik>
+          <Img src={product.images && product.images[0].src} alt=""></Img>
         </div>
         <article>
-          <h2>{product.name}</h2>
           <p> {product.description}</p>
           <h2>{product.price} KR</h2>
         </article>
@@ -54,3 +54,11 @@ function Product() {
   )
 }
 export default Product;
+
+const Produktrubrik = styled.h2`
+padding-top:20px;
+`
+const Img = styled.img`
+width:20%;
+padding-top:10px;
+`
