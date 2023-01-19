@@ -63,7 +63,7 @@ function Vases() {
               products.map((product) => 
                   (
                     product.categories[0] ? 
-                      product.categories[0].name==="Vaser" ?
+                      product.categories[0].name==="Vaser" || product.categories[0].name==="NyVas" ?
 
                       <Productitem product={product}
                         key={product.id} 

@@ -64,7 +64,7 @@ function Flowers() {
               products.map((product) => 
                   (
                     product.categories[0] ? 
-                      product.categories[0].name==="Torkade blommor" ?
+                      product.categories[0].name==="Torkade blommor" || product.categories[0].name==="NyBlomma"?
 
                       <Productitem product={product}
                         key={product.id} 
