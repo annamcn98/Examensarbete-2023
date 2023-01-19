@@ -3,7 +3,6 @@ import Productitem from '../components/Productitem';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-
 import woocommerceRestApi from '@woocommerce/woocommerce-rest-api';
 
 const api = new woocommerceRestApi({
@@ -44,47 +43,46 @@ function Vases() {
   return (
     <div className='parentdiv'>
         <NewsDiv>
-        <div>
-          <h1 className=''>
-            Shoppa vaser
-          </h1>
-          <h3 className='underrubrik'>
-            Hos oss hittar du den <br></br>
-            perfekta vasen till<br></br>
-            hemmets alla rum   
-          </h3> 
-          <Link to="/products">
-          <button className='filterbtn'>
-            Tillbaka till alla produkter
-          </button> 
-          </Link>  
-        </div>
+          <div>
+            <h1 className=''>
+              Shoppa vaser
+            </h1>
+            <h3 className='underrubrik'>
+              Hos oss hittar du den <br></br>
+              perfekta vasen till<br></br>
+              hemmets alla rum   
+            </h3> 
+            <Link to="/products">
+            <button className='filterbtn'>
+              Tillbaka till alla produkter
+            </button> 
+            </Link>  
+          </div>
             {
               products.map((product) => 
                   (
                     product.categories[0] ? 
-                      product.categories[0].name==="Vaser" || product.categories[0].name==="NyVas" ?
-
+                    product.categories[0].name==="Vaser" || 
+                    product.categories[0].name==="NyVas" ?
                       <Productitem product={product}
                         key={product.id} 
                       />
                     :null:null
                   )
-              )
+                )
             }
         </NewsDiv>
     </div>
   )
 }
-const NewsDiv = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 300px));
-    justify-content: center;
-    background-color: white;
-    /* grid-gap: 1rem; */
-    /* height: 100%; */
-    gap: 1em 1em;
-    padding: 3em 0em;
-`
 
 export default Vases
+
+const NewsDiv = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 300px));
+  justify-content: center;
+  background-color: white;
+  gap: 1em 1em;
+  padding: 3em 0em;
+`
