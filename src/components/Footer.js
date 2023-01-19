@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 
 function Footer() {
@@ -9,12 +10,18 @@ function Footer() {
     <p>Norrlandsgatan 27</p>       
        <p>112 67</p>      
        <p>Stockholm</p>    
-       <p>Hej@annelina annalina.se</p>
+       <p>hej@vaseplace.se</p>
     </Div1>    
    <Div2>  
+   <Linkstyle to="products">
       <p>Våra produkter</p>
-      <p>Om oss</p>    
-      <p>content</p> 
+      </Linkstyle> 
+      <Linkstyle to="OmOss">
+      <p>Om oss</p> 
+      </Linkstyle> 
+      <Linkstyle to="/Kontakt">  
+      <p>Kontakta oss</p> 
+      </Linkstyle>
         </Div2>
 <CopyrightDiv>
   <div>    
@@ -57,4 +64,13 @@ const Footerdiv = styled.div`
     color: white;
 
     `
+    const Linkstyle = styled(Link)`
+    text-decoration:none;
+    color:white;
+    &:hover{
+      color:#EEB5A2;
+    }
+    `
+
+    
 

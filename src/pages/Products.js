@@ -16,7 +16,7 @@ const api = new woocommerceRestApi({
 
 export async function fetchWooCommerceProducts() {
     try {
-        const response = await api.get("products");
+        const response = await api.get("products", { per_page:100 });
         // console.log(response);
         return response;
       } catch (error) {
